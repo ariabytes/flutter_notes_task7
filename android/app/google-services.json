@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1083001724485",
+    "project_id": "notes-ce9f5",
+    "storage_bucket": "notes-ce9f5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1083001724485:android:a9474d1f606761b01fcd2c",
+        "android_client_info": {
+          "package_name": "com.example.task7_flutterfire_notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1083001724485-co6i0jfg389sr8ngne4u8p6mgf5omd6n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6IXl4--T2Bib8twqTkSEXKngjGCNs5go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1083001724485-co6i0jfg389sr8ngne4u8p6mgf5omd6n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1083001724485-0g5mlpvd441nqf5qq7094qslb2sq75ia.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.task7FlutterfireNotes"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
