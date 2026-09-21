@@ -43,6 +43,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 12),
+
+              TextButton(
+                child: const Text("Forgot password?"),
+                onPressed: () => _showResetDialog(context),
+              ),
+
+              const SizedBox(height: 24),
+
               ElevatedButton(
                 child: loading
                     ? const CircularProgressIndicator(color: Colors.white)
@@ -121,5 +129,33 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  // FOR FORGOT PASSWORD
+  void _showResetDialog(BuildContext context) {
+    final resetEmailCtrl = TextEditingController(text: emailCtrl.text);
+
+    showDialog(context: context, builder: (_)=>AlertDialog(
+      title: const Text("Reset Password"),
+      content: TextField(
+        controller: resetEmailCtrl,
+        decoration: const InputDecoration(
+          labelText: "Enter your email",
+          border: OutlineInputBorder()
+        ),
+      ),
+      actions: [
+        TextButton(onPressed: ()=> Navigator.pop(context), child: const Text("Cancel")),
+        ElevatedButton(onPressed: () async {
+          if (resetEmailCtrl.text.isEmpty) return;
+          final error = await auth.resetPassword(resetEmailCtrl.text);
+          if (!context.mounted) return;
+          Navigator.pop(context);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(error == null ? "Password reset email sent! Pls check you inbox or spam." : "Something went wrong. Please try again."))
+          );
+        }, child: const Text("Send Reset Link"))
+      ],
+    ));
   }
 }
