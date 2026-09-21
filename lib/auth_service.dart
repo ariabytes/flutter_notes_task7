@@ -7,6 +7,7 @@ class AuthService {
   final GoogleSignIn? _googleSignIn = kIsWeb ? null : GoogleSignIn();
 
   // Google Sign-In
+  // if ang signin kay Google kay gi click nako ang pangalan nako kay mag login siya. else, mangita siyag credential niya -sir velez
   Future<User?> signInWithGoogle() async {
     if (kIsWeb) {
       GoogleAuthProvider googleProvider = GoogleAuthProvider();
@@ -30,7 +31,7 @@ class AuthService {
   Future<User?> registerWithEmail (String email, String password) async {
     try {
       final UserCredential = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-      return UserCredential.user;
+      return UserCredential.user; // if okay siya hehe
     } catch (e) {
       print("Registration Error: $e");
       return null;

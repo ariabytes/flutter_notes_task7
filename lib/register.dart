@@ -10,7 +10,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final AuthService auth = AuthService();
+  final AuthService auth = AuthService(); // to access the classes we created in auth
   final TextEditingController emailCtrl = TextEditingController();
   final TextEditingController passwordCtrl = TextEditingController();
   bool loading = false;
