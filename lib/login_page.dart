@@ -26,7 +26,6 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // --- Email Login ---
               TextField(
                 controller: emailCtrl,
                 decoration: const InputDecoration(
